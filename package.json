@@ -1,0 +1,17 @@
+{
+  "name": "buki-connector-kit",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bring Sage into Buki — full-stack MERN internal assistant",
+  "scripts": {
+    "postinstall": "npm --prefix backend install && npm --prefix frontend install --include=dev",
+    "build": "npm --prefix frontend run build",
+    "start": "node backend/server.js",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "test": "npm --prefix backend test"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

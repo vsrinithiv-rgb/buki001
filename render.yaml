@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: buki-connector-kit
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: BUKI_API_TOKEN
+        generateValue: true
+      - key: SAGE_MOCK_MODE
+        value: "true"
+      - key: SAGE_TIMEOUT_MS
+        value: "3000"
+      - key: MONGODB_URI
+        sync: false
+      - key: SAGE_API_URL
+        sync: false
+      - key: SAGE_API_KEY
+        sync: false
